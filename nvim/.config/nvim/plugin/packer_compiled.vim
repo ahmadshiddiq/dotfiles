@@ -9,51 +9,17 @@ endif
 try
 
 lua << END
-local plugins = {
-  gruvbox = {
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/home/ash/.local/share/nvim/site/pack/packer/opt/gruvbox"
-  },
-  ["nvim-treesitter"] = {
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/home/ash/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
-  },
-  ["packer.nvim"] = {
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/home/ash/.local/share/nvim/site/pack/packer/opt/packer.nvim"
-  },
-  ["plenary.nvim"] = {
-    load_after = {
-      ["telescope.nvim"] = true
-    },
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/home/ash/.local/share/nvim/site/pack/packer/opt/plenary.nvim"
-  },
-  ["popup.nvim"] = {
-    load_after = {
-      ["telescope.nvim"] = true
-    },
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/home/ash/.local/share/nvim/site/pack/packer/opt/popup.nvim"
-  },
-  ["telescope.nvim"] = {
-    after = { "plenary.nvim", "popup.nvim" },
-    loaded = false,
-    only_sequence = false,
-    only_setup = false,
-    path = "/home/ash/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
-  }
-}
+  local package_path_str = "/home/ash/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/ash/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/ash/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/ash/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
+  local install_cpath_pattern = "/home/ash/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+  if not string.find(package.path, package_path_str, 1, true) then
+    package.path = package.path .. ';' .. package_path_str
+  end
+
+  if not string.find(package.cpath, install_cpath_pattern, 1, true) then
+    package.cpath = package.cpath .. ';' .. install_cpath_pattern
+  end
+
+local plugins = {}
 
 local function handle_bufread(names)
   for _, name in ipairs(names) do

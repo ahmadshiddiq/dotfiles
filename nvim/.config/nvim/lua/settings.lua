@@ -25,9 +25,11 @@ local options = {
 	tabstop = 2,
 	shiftwidth = 2,
 	softtabstop = 2,
+  t_Co = 256,
 
   -- string
   mouse = 'a',
+  encoding = 'UTF-8',
 }
 
 apply(options)
