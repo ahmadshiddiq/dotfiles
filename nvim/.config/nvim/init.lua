@@ -13,4 +13,6 @@ require("settings")
 require("interfaces")
 require("keybinds")
 
+-- Modules
 require("modules.bufferline")
+require("modules.telescope")

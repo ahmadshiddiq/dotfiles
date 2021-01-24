@@ -19,7 +19,14 @@ lua << END
     package.cpath = package.cpath .. ';' .. install_cpath_pattern
   end
 
-local plugins = {}
+local plugins = {
+  ["nvim-bufferline.lua"] = {
+    loaded = false,
+    only_sequence = false,
+    only_setup = false,
+    path = "/home/ash/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
+  }
+}
 
 local function handle_bufread(names)
   for _, name in ipairs(names) do
