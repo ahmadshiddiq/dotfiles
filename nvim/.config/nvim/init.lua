@@ -12,3 +12,5 @@ require("plugins")
 require("settings")
 require("interfaces")
 require("keybinds")
+
+require("modules.bufferline")
