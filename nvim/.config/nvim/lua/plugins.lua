@@ -8,6 +8,7 @@ return require('packer').startup(function()
   use {'wakatime/vim-wakatime'}
   use {'tpope/vim-fugitive'}
   use {'akinsho/nvim-bufferline.lua', opt = true}
+  use {'tpope/vim-dispatch'}
 
   use {
     'nvim-telescope/telescope.nvim',
