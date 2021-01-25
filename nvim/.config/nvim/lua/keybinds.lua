@@ -10,3 +10,6 @@ remap("n", "<Leader>r", "<CMD>luafile %<CR>", { noremap = true })
 -- Telescope
 remap('n', '<C-p>', '<cmd>lua require("telescope.builtin").find_files()<cr>', { noremap = true, silent = true })
 remap('n', '<C-f>', '<cmd>lua require("telescope.builtin").live_grep()<cr>', { noremap = true, silent = true })
+
+-- NvimTree
+remap('n', '<C-n>', '<CMD>NvimTreeToggle<CR>', { noremap = true })
