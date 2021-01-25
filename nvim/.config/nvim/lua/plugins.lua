@@ -9,6 +9,7 @@ return require('packer').startup(function()
   use {'tpope/vim-fugitive'}
   use {'akinsho/nvim-bufferline.lua', opt = true}
   use {'tpope/vim-dispatch'}
+  use {'mattn/emmet-vim'}
 
   use {
     'nvim-telescope/telescope.nvim',
