@@ -25,7 +25,7 @@ local options = {
 	tabstop = 2,
 	shiftwidth = 2,
 	softtabstop = 2,
-  t_Co = 256,
+  cmdheight = 2,
 
   -- string
   mouse = 'a',
