@@ -14,5 +14,9 @@ require("interfaces")
 require("keybinds")
 
 -- Modules
+require("modules.util")
 require("modules.bufferline")
 require("modules.telescope")
+require("modules.nvimtree")
+require("modules.autopairs")
+require("modules.emmet")

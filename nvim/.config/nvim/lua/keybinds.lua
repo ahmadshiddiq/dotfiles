@@ -13,3 +13,5 @@ remap('n', '<C-f>', '<cmd>lua require("telescope.builtin").live_grep()<cr>', { n
 
 -- NvimTree
 remap('n', '<C-n>', '<CMD>NvimTreeToggle<CR>', { noremap = true })
+
+-- NvimTree

@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/ashtronoot/.tmux'
+let g:netrw_dirhist_9='/home/ashtronoot/.config/polybar/grayblocks'
 let g:netrw_dirhist_8='/home/ash/.config/bspwm'
 let g:netrw_dirhist_7='/home/ash/.config/nvim'
 let g:netrw_dirhist_6='/home/ash/.config/nvim/lua'

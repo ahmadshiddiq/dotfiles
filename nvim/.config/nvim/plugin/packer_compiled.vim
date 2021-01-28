@@ -9,8 +9,8 @@ endif
 try
 
 lua << END
-  local package_path_str = "/home/ash/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/ash/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/ash/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/ash/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-  local install_cpath_pattern = "/home/ash/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+  local package_path_str = "/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
+  local install_cpath_pattern = "/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
   if not string.find(package.path, package_path_str, 1, true) then
     package.path = package.path .. ';' .. package_path_str
   end
@@ -19,18 +19,112 @@ lua << END
     package.cpath = package.cpath .. ';' .. install_cpath_pattern
   end
 
-local plugins = {
+_G.packer_plugins = {
+  ["emmet-vim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/emmet-vim"
+  },
+  gruvbox = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/gruvbox"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
   ["nvim-bufferline.lua"] = {
     loaded = false,
     only_sequence = false,
     only_setup = false,
-    path = "/home/ash/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
+  },
+  ["nvim-tree.lua"] = {
+    after = { "nvim-web-devicons" },
+    loaded = false,
+    only_sequence = false,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context"
+  },
+  ["nvim-treesitter-refactor"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor"
+  },
+  ["nvim-web-devicons"] = {
+    load_after = {
+      ["nvim-tree.lua"] = true
+    },
+    loaded = false,
+    only_sequence = false,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
+  },
+  ["packer.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-dispatch"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-dispatch"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-wakatime"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-wakatime"
   }
 }
 
 local function handle_bufread(names)
   for _, name in ipairs(names) do
-    local path = plugins[name].path
+    local path = packer_plugins[name].path
     for _, dir in ipairs({ 'ftdetect', 'ftplugin', 'after/ftdetect', 'after/ftplugin' }) do
       if #vim.fn.finddir(dir, path) > 0 then
         vim.cmd('doautocmd BufRead')
@@ -42,7 +136,7 @@ end
 
 local packer_load = nil
 local function handle_after(name, before)
-  local plugin = plugins[name]
+  local plugin = packer_plugins[name]
   plugin.load_after[before] = nil
   if next(plugin.load_after) == nil then
     packer_load({name}, {})
@@ -52,7 +146,7 @@ end
 packer_load = function(names, cause)
   local some_unloaded = false
   for _, name in ipairs(names) do
-    if not plugins[name].loaded then
+    if not packer_plugins[name].loaded then
       some_unloaded = true
       break
     end
@@ -64,14 +158,14 @@ packer_load = function(names, cause)
   local del_cmds = {}
   local del_maps = {}
   for _, name in ipairs(names) do
-    if plugins[name].commands then
-      for _, cmd in ipairs(plugins[name].commands) do
+    if packer_plugins[name].commands then
+      for _, cmd in ipairs(packer_plugins[name].commands) do
         del_cmds[cmd] = true
       end
     end
 
-    if plugins[name].keys then
-      for _, key in ipairs(plugins[name].keys) do
+    if packer_plugins[name].keys then
+      for _, key in ipairs(packer_plugins[name].keys) do
         del_maps[key] = true
       end
     end
@@ -86,22 +180,22 @@ packer_load = function(names, cause)
   end
 
   for _, name in ipairs(names) do
-    if not plugins[name].loaded then
+    if not packer_plugins[name].loaded then
       vim.cmd('packadd ' .. name)
-      if plugins[name].config then
-        for _i, config_line in ipairs(plugins[name].config) do
+      if packer_plugins[name].config then
+        for _i, config_line in ipairs(packer_plugins[name].config) do
           loadstring(config_line)()
         end
       end
 
-      if plugins[name].after then
-        for _, after_name in ipairs(plugins[name].after) do
+      if packer_plugins[name].after then
+        for _, after_name in ipairs(packer_plugins[name].after) do
           handle_after(after_name, name)
           vim.cmd('redraw')
         end
       end
 
-      plugins[name].loaded = true
+      packer_plugins[name].loaded = true
     end
   end
 
