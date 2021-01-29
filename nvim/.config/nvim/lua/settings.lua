@@ -20,6 +20,8 @@ local options = {
 	smartindent = true,
   number = true,
   relativenumber = true,
+  splitright = true,
+  splitbelow = true,
         
   -- number
 	tabstop = 2,
