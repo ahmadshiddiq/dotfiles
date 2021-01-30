@@ -20,6 +20,12 @@ lua << END
   end
 
 _G.packer_plugins = {
+  ["astronauta.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
+  },
   ["auto-pairs"] = {
     loaded = true,
     only_sequence = true,

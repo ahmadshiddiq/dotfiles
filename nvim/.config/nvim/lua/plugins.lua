@@ -11,6 +11,7 @@ return require('packer').startup(function()
   use {'jiangmiao/auto-pairs'}
   use {'junegunn/vim-easy-align'}
   use {'mhinz/vim-sayonara'}
+  use {'tjdevries/astronauta.nvim'}
 
   use {'akinsho/nvim-bufferline.lua', opt = true}
 

@@ -1,6 +1,7 @@
 to do:
 - make another file for gruvbox settings
 - make keybind jj as exit
+- add lsp
 
 to learn more:
 - treesitter

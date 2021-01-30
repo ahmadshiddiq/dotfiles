@@ -1,31 +1,36 @@
-local map = vim.api.nvim_set_keymap
+local k = require"astronauta.keymap"
 
--- Leader
+local noremap =  k.noremap
+local nnoremap = k.nnoremap
+local inoremap = k.inoremap
+local vnoremap = k.vnoremap
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Main Configuration
-map("n", "<Leader>r", "<cmd>luafile %<cr>", { noremap = true })
-map("n", "<Leader>h", ":wincmd h<cr>", { noremap = true })
-map("n", "<Leader>j", ":wincmd j<cr>", { noremap = true })
-map("n", "<Leader>k", ":wincmd k<cr>", { noremap = true })
-map("n", "<Leader>l", ":wincmd l<cr>", { noremap = true })
-map("n", "<A-h>", ":bprevious<cr>", { noremap = true })
-map("n", "<A-l>", ":bnext<cr>", { noremap = true })
+nnoremap({"<Leader>r", "<cmd>luafile %<cr>"})
 
--- use jj instead of Esc (later add this)
--- inoremap{"jj", "<Esc><Esc>"}
--- inoremap{"Jj", "<Esc><Esc>"}
--- inoremap{"jJ", "<Esc><Esc>"}
--- inoremap{"JJ", "<Esc><Esc>"}
+nnoremap({"<Leader>h", ":wincmd h<cr>"})
+nnoremap({"<Leader>j", ":wincmd j<cr>"})
+nnoremap({"<Leader>k", ":wincmd k<cr>"})
+nnoremap({"<Leader>l", ":wincmd l<cr>"})
+
+nnoremap({"<A-h>", ":bprevious<cr>"})
+nnoremap({"<A-l>", ":bnext<cr>"})
+
+inoremap{"jj", "<Esc><Esc>"}
+inoremap{"Jj", "<Esc><Esc>"}
+inoremap{"jJ", "<Esc><Esc>"}
+inoremap{"JJ", "<Esc><Esc>"}
+
 
 -- Sayonara
-map("n", "<A-j>", ":Sayonara!<cr>", { noremap = true })
-map("n", "<A-k>", ":Sayonara<cr>", { noremap = true })
+nnoremap({"<A-j>", ":Sayonara!<cr>"})
+nnoremap({"<A-k>", ":Sayonara<cr>"})
 
 -- Telescope
-map('n', '<C-p>', '<cmd>lua require("telescope.builtin").find_files()<cr>', { noremap = true, silent = true })
-map('n', '<C-f>', '<cmd>lua require("telescope.builtin").live_grep()<cr>', { noremap = true, silent = true })
+nnoremap({"<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>"})
+nnoremap({"<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>"})
 
 -- NvimTree
-map('n', '<C-n>', '<cmd>NvimTreeToggle<cr>', { noremap = true })
+nnoremap({'<C-n>', '<cmd>NvimTreeToggle<cr>'})
