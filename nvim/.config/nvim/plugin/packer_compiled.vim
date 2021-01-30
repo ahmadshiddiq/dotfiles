@@ -9,8 +9,8 @@ endif
 try
 
 lua << END
-  local package_path_str = "/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-  local install_cpath_pattern = "/home/ashtronoot/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+  local package_path_str = "/home/ashtronoot/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/ashtronoot/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+  local install_cpath_pattern = "/home/ashtronoot/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
   if not string.find(package.path, package_path_str, 1, true) then
     package.path = package.path .. ';' .. package_path_str
   end
@@ -32,6 +32,12 @@ _G.packer_plugins = {
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
+  indentLine = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/indentLine"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     only_sequence = true,
@@ -43,6 +49,12 @@ _G.packer_plugins = {
     only_sequence = false,
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
+  },
+  ["nvim-compe"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-tree.lua"] = {
     after = { "nvim-web-devicons" },
@@ -107,6 +119,12 @@ _G.packer_plugins = {
     only_sequence = true,
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-dispatch"
+  },
+  ["vim-easy-align"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-easy-align"
   },
   ["vim-fugitive"] = {
     loaded = true,

@@ -32,6 +32,7 @@ local options = {
   -- string
   mouse = 'a',
   encoding = 'UTF-8',
+  completeopt = 'menu,menuone,noselect',
 }
 
 apply(options)
