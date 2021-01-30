@@ -20,7 +20,8 @@ return require('packer').startup(function()
     requires = {
       {'romgrk/nvim-treesitter-context'},
       {'nvim-treesitter/nvim-treesitter-refactor'}
-    }
+    },
+    opt = true
   }
   use {
     'nvim-telescope/telescope.nvim',
@@ -31,8 +32,7 @@ return require('packer').startup(function()
   }
 
   use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {{'kyazdani42/nvim-web-devicons'}},
-    opt = true,
+    'kyazdani42/nvim-tree.lua', -- file exploler
+    requires = {{'kyazdani42/nvim-web-devicons'}}, -- file icons
   }
 end)

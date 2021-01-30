@@ -11,3 +11,7 @@
 require("settings")
 require("plugins")
 require("mappings")
+
+-- Plugin Configurations
+require("plugins.treesitter")
+require("plugins.bufferline")
