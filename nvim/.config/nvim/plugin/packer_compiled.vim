@@ -20,6 +20,18 @@ lua << END
   end
 
 _G.packer_plugins = {
+  ["astronauta.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
+  },
+  ["auto-pairs"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/auto-pairs"
+  },
   ["emmet-vim"] = {
     loaded = true,
     only_sequence = true,
@@ -32,63 +44,48 @@ _G.packer_plugins = {
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
-  indentLine = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/indentLine"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
-  },
   ["nvim-bufferline.lua"] = {
     loaded = false,
     only_sequence = false,
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
   },
-  ["nvim-compe"] = {
+  ["nvim-tree.lua"] = {
     loaded = true,
     only_sequence = true,
     only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
-  ["nvim-tree.lua"] = {
-    after = { "nvim-web-devicons" },
+  ["nvim-treesitter"] = {
+    after = { "nvim-treesitter-refactor", "nvim-treesitter-context" },
     loaded = false,
     only_sequence = false,
     only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
-  },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
   },
   ["nvim-treesitter-context"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context"
-  },
-  ["nvim-treesitter-refactor"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor"
-  },
-  ["nvim-web-devicons"] = {
     load_after = {
-      ["nvim-tree.lua"] = true
+      ["nvim-treesitter"] = true
     },
     loaded = false,
     only_sequence = false,
     only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-context"
+  },
+  ["nvim-treesitter-refactor"] = {
+    load_after = {
+      ["nvim-treesitter"] = true
+    },
+    loaded = false,
+    only_sequence = false,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-refactor"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -131,6 +128,12 @@ _G.packer_plugins = {
     only_sequence = true,
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-sayonara"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-sayonara"
   },
   ["vim-wakatime"] = {
     loaded = true,

@@ -1,13 +1,14 @@
-local command = vim.api.nvim_command
+-- Basic settings
+local cmd = vim.api.nvim_command
 
-local apply = function(option)
+local set = function(option)
   for key, value in pairs(option) do
     if value == true then
-      command('set ' .. key)
+      cmd('set ' .. key)
     elseif value == false then
-      command(string.format('set no%s', key))
+      cmd(string.format('set no%s', key))
     else
-      command(string.format('set %s=%s', key, value))
+      cmd(string.format('set %s=%s', key, value))
     end
   end
 end
@@ -22,12 +23,16 @@ local options = {
   relativenumber = true,
   splitright = true,
   splitbelow = true,
+  hidden = true,
+  termguicolors = true,
         
   -- number
 	tabstop = 2,
 	shiftwidth = 2,
 	softtabstop = 2,
   cmdheight = 2,
+  colorcolumn = 80,
+  scrolloff = 8,
 
   -- string
   mouse = 'a',
@@ -35,4 +40,11 @@ local options = {
   completeopt = 'menu,menuone,noselect',
 }
 
-apply(options)
+set(options)
+
+-------------------------------------------------------------------------------
+
+-- Interface settings
+cmd('colorscheme gruvbox')
+cmd('let g:gruvbox_contrast_dark = "hard"')
+cmd('let g:gruvbox_italic = 1')
