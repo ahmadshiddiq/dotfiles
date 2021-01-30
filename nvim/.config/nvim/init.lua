@@ -10,12 +10,4 @@
 -- Calling file inside lua directory
 require("settings")
 require("plugins")
-require("interfaces")
-require("keybinds")
-
--- Modules
-require("modules.bufferline")
-require("modules.telescope")
-require("modules.nvimtree")
-require("modules.emmet")
-require("modules.autopairs")
+require("mappings")

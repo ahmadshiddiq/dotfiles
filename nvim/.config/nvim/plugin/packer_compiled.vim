@@ -20,6 +20,12 @@ lua << END
   end
 
 _G.packer_plugins = {
+  ["auto-pairs"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/auto-pairs"
+  },
   ["emmet-vim"] = {
     loaded = true,
     only_sequence = true,
@@ -32,29 +38,11 @@ _G.packer_plugins = {
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
-  indentLine = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/indentLine"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
-  },
   ["nvim-bufferline.lua"] = {
     loaded = false,
     only_sequence = false,
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
-  },
-  ["nvim-compe"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-tree.lua"] = {
     after = { "nvim-web-devicons" },
@@ -131,6 +119,12 @@ _G.packer_plugins = {
     only_sequence = true,
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-sayonara"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-sayonara"
   },
   ["vim-wakatime"] = {
     loaded = true,
