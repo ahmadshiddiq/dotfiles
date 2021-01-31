@@ -12,6 +12,7 @@ return require('packer').startup(function()
   use {'junegunn/vim-easy-align'}
   use {'mhinz/vim-sayonara'}
   use {'tjdevries/astronauta.nvim'}
+  use {'tpope/vim-commentary'}
 
   use {'akinsho/nvim-bufferline.lua', opt = true}
 
