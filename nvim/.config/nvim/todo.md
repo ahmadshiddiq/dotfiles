@@ -1,6 +1,5 @@
 to do:
-- make another file for gruvbox settings
-- make keybind jj as exit
+- make another file for gruvbox settings (maybe)
 - add lsp
 
 to learn more:
@@ -8,8 +7,6 @@ to learn more:
 
 to config:
 - telescope
-- nvim-tree
-- bufferline
 
 i dont have idea what that for:
 - plenary

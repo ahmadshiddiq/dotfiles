@@ -57,7 +57,7 @@ _G.packer_plugins = {
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-treesitter-refactor", "nvim-treesitter-context" },
+    after = { "nvim-treesitter-context", "nvim-treesitter-refactor" },
     loaded = false,
     only_sequence = false,
     only_setup = false,
@@ -110,6 +110,12 @@ _G.packer_plugins = {
     only_sequence = true,
     only_setup = false,
     path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/ashtronoot/.local/share/nvim/site/pack/packer/start/vim-commentary"
   },
   ["vim-dispatch"] = {
     loaded = true,
