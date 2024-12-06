@@ -1,2 +1,3 @@
 # dotfiles
-Linux dotfiles configuration
+
+personal configurations

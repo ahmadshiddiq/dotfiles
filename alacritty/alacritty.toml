@@ -1,0 +1,21 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 10
+padding.y = 8
+decorations = "buttonless"
+opacity = 1
+option_as_alt = "Both"
+
+[font]
+normal.family = "Liga SFMono Nerd Font"
+size = 13
+
+[cursor]
+style.shape = "Block"
+style.blinking = "On"
+unfocused_hollow = false
+
+[general]
+import = ["~/.config/alacritty/themes/themes/oxocarbon.toml"]

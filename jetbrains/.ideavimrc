@@ -1,0 +1,119 @@
+let mapleader=" "
+
+" PLUGINS
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'tommcdo/vim-exchange'
+Plug 'kana/vim-textobj-entire'
+Plug 'machakann/vim-highlightedyank'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'chrisbra/matchit'
+
+" SET IDEAVIM PLUGINS FROM JETBRAINS PLUGINS
+set sneak
+set quickscope
+set which-key
+
+set notimeout
+set timeoutlen=5000
+
+" VIM SETTINGS
+set ignorecase
+set incsearch
+set noerrorbells
+set scrolloff=8
+set smartcase
+set visualbell
+set hlsearch
+
+" IDEA SETTINGS
+set ideajoin
+set ideamarks
+
+" PLUGIN SETTINGS
+let g:argtextobj_pairs="[:],(:),<:>"
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" PLUGIN MAPPINGS
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+map <leader>w <Plug>(easymotion-w)
+map <leader>E <Plug>(easymotion-b)
+map <C-\> :NERDTreeToggle<CR>
+
+nmap cx <Plug>(Exchange)
+xmap X <Plug>(Exchange)
+nmap cxc <Plug>(ExchangeClear)
+nmap cxx <Plug>(ExchangeLine)
+
+" MAPPINGS
+inoremap jj <ESC>
+map <leader>0 "0p
+map <leader>' vwh<leader>y
+map <leader>, 0vi"<leader>y
+map <leader>. 0vi"d"*P
+map <leader>1 cit{{ $t("") }}<esc>hhhhh
+map <leader>2 0wC{{ $t("") }}<esc>hhhhh
+map <S-Space> <Action>(GotoNextError)
+map <leader>q <Action>(CloseContent)
+map <leader>l <Action>(NextSplitter)
+map <leader>h <Action>(PrevSplitter)
+map <leader>o <Action>(FileStructurePopup)
+map <leader>u <Action>(FindUsages)
+map <leader>r <Action>(RenameElement)
+map <leader>t <Action>(Refactorings.QuickListPopupAction)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>/ <Action>(CommentByBlockComment)
+map <leader>= <Action>(MoveTabRight)
+map <leader>- <Action>(MoveTabDown)
+
+" system clipboard
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
+
+" SETHANDLER
+sethandler <C-2> a:ide
+sethandler <C-S-2> a:ide
+sethandler <C-6> a:ide
+sethandler <C-S-6> a:ide
+sethandler <C-;> a:ide
+sethandler <C-S-;> a:ide
+sethandler <C-A> a:ide
+sethandler <C-B> i:ide n-v:vim
+sethandler <C-C> a:ide
+sethandler <C-D> i:ide n-v:vim
+sethandler <C-E> a:ide
+sethandler <C-F> i:ide n-v:vim
+sethandler <C-G> a:ide
+sethandler <C-H> n-v:ide i:vim
+sethandler <C-I> i:ide n-v:vim
+sethandler <C-J> n-v:ide i:vim
+sethandler <C-K> a:ide
+sethandler <C-L> a:ide
+sethandler <C-M> a:ide
+sethandler <C-N> a:vim
+sethandler <C-O> i:ide n-v:vim
+sethandler <C-P> a:vim
+sethandler <A-Q> i:ide n-v:vim
+sethandler <C-Q> a:ide
+sethandler <C-R> i:ide n-v:vim
+sethandler <C-S> a:ide
+sethandler <C-T> a:ide
+sethandler <C-U> i:ide n-v:vim
+sethandler <C-V> i:ide n-v:vim
+sethandler <C-W> a:vim
+sethandler <C-X> a:ide
+sethandler <C-Y> a:ide
+sethandler <C-[> a:ide
+sethandler <C-\> a:ide
+sethandler <C-]> a:ide
