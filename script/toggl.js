@@ -13,7 +13,8 @@ function parseCsvAndSumDurationsWithDescriptions(
   filePath,
   dateColumn,
   durationColumn,
-  descriptionColumn
+  descriptionColumn,
+  tagsColumn
 ) {
   if (!fs.existsSync(filePath)) {
     console.error(`File not found: ${filePath}`);
@@ -43,8 +44,14 @@ function parseCsvAndSumDurationsWithDescriptions(
     const dateIndex = headers.indexOf(dateColumn);
     const durationIndex = headers.indexOf(durationColumn);
     const descriptionIndex = headers.indexOf(descriptionColumn);
+    const tagsIndex = headers.indexOf(tagsColumn);
 
-    if (dateIndex === -1 || durationIndex === -1 || descriptionIndex === -1) {
+    if (
+      dateIndex === -1 ||
+      durationIndex === -1 ||
+      descriptionIndex === -1 ||
+      tagsIndex === -1
+    ) {
       console.error("Some required columns are not found in the file.");
       return;
     }
@@ -57,13 +64,19 @@ function parseCsvAndSumDurationsWithDescriptions(
       const date = columns[dateIndex];
       const duration = parseFloat(columns[durationIndex]) || 0;
       const description = columns[descriptionIndex] || "Unknown Description";
+      const tags = columns[tagsIndex] || "Unknown Tags";
 
       if (date) {
         if (!acc[date]) {
-          acc[date] = { totalDuration: 0, descriptions: new Set() };
+          acc[date] = {
+            totalDuration: 0,
+            descriptions: new Set(),
+            tags: new Set(),
+          };
         }
         acc[date].totalDuration += duration;
         acc[date].descriptions.add(description);
+        acc[date].tags.add(tags);
       }
 
       return acc;
@@ -73,16 +86,17 @@ function parseCsvAndSumDurationsWithDescriptions(
     console.log(
       "Summed Durations by Date with Descriptions (Rounded to Nearest Quarter):"
     );
-    for (const [date, { totalDuration, descriptions }] of Object.entries(
+    for (const [date, { totalDuration, descriptions, tags }] of Object.entries(
       groupedData
     )) {
       const roundedDuration = roundToNearestQuarterHour(totalDuration);
       const descriptionList =
         Array.from(descriptions).join(", ") || "Unknown Description";
+      const tagsList = Array.from(tags).join(", ") || "Unknown Tags";
       console.log(
         `Date: ${date}, Total Duration: ${roundedDuration.toFixed(
           2
-        )} hours (${descriptionList})`
+        )} hours (${descriptionList}) [${tagsList}]`
       );
     }
   });
@@ -93,6 +107,7 @@ const csvFilePath = process.argv[2];
 const dateColumn = "Start date";
 const durationColumn = "Duration";
 const descriptionColumn = "Description";
+const tagsColumn = "Tags";
 
 // Run the parser
 if (csvFilePath) {
@@ -100,7 +115,8 @@ if (csvFilePath) {
     csvFilePath,
     dateColumn,
     durationColumn,
-    descriptionColumn
+    descriptionColumn,
+    tagsColumn
   );
 } else {
   console.error("Please provide the path to the CSV file as an argument.");
